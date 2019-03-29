@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import PropTypes from "prop-types";
+import Stats from "./stats";
 
 export default (player) => {
 	function MainApp(props) {
@@ -19,15 +20,7 @@ export default (player) => {
 						}}>Logout</button>
 				</header>
 				<div className="body">
-					<div className="stats lists">
-						{ playerStats === null ? "Loading" :
-							<ul className="nes-list is-circle">
-								<li> XP: {playerStats.xp} </li>
-								<li> Quests: {playerStats.quests_completed}/{playerStats.total_quests} </li>
-								<li> Side Quests: {playerStats.side_quests_completed}/{playerStats.total_side_quests} </li>
-							</ul>
-						}
-					</div>
+					<Stats playerStats={playerStats} />
 				</div>
 			</div>
 		);
