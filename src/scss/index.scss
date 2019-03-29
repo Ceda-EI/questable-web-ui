@@ -1,3 +1,11 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #383838;
+	color: #FFF;
+	font-family: "Press Start 2P";
+}
+
 .login {
 	padding: 15%;
 	display: flex;
@@ -18,4 +26,24 @@
 			display: block;
 		}
 	}
+}
+
+.main {
+	header {
+		width: 100%;
+		padding: 1em 3em;
+		display: flex;
+		justify-content: space-between;
+		background-color: #000;
+		h1 {
+			font-family: "Ubuntu";
+		}
+	}
+	.body {
+		padding: 1em;
+	}
+}
+
+.nes-list.is-circle li::before {
+	color: #FFF;
 }

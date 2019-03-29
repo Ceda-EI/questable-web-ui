@@ -7,7 +7,7 @@ export default (player) => {
 		return (
 			<div className="login">
 				<div className="wrapper">
-					<input type="text" placeholder="Token ID" value={input} className="nes-input"
+					<input type="text" placeholder="Token ID" value={input} className="nes-input is-dark"
 						onChange={evt => setInput(evt.target.value)} />
 					<button className="nes-btn is-primary"
 						onClick={
