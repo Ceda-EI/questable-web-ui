@@ -1,7 +1,23 @@
 import React from "react";
-export default () => function MainApp() {
-	return (
-		<div className="main">
-		</div>
-	);
+import PropTypes from "prop-types";
+
+export default () => {
+	function MainApp(props) {
+		return (
+			<div className="main">
+				<header>
+					<p>Questable</p>
+					<button
+						onClick={() => {
+							props.setLoggedIn(false);
+							localStorage.removeItem("token");
+						}}>Logout</button>
+				</header>
+			</div>
+		);
+	}
+	MainApp.propTypes = {
+		setLoggedIn: PropTypes.func,
+	};
+	return MainApp;
 };

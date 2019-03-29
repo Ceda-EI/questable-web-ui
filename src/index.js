@@ -14,7 +14,7 @@ const MainApp = mainapp();
 
 function App(){
 	const [loggedIn, setLoggedIn] = useState(false);
-	return loggedIn ? <MainApp /> : <Login setLoggedIn={setLoggedIn} />;
+	return loggedIn ? <MainApp setLoggedIn={setLoggedIn} /> : <Login setLoggedIn={setLoggedIn} />;
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));

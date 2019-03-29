@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default (player) => {
 	function Login(props) {
-		const [input, setInput] = useState(localStorage.getItem("token"));
+		const [input, setInput] = useState(localStorage.getItem("token") ? localStorage.getItem("token"): "" );
 		return (
 			<div className="login">
 				<input type="text" placeholder="Token ID" value={input}
