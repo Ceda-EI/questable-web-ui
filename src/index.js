@@ -16,7 +16,21 @@ const MainApp = mainapp(player);
 
 function App(){
 	const [loggedIn, setLoggedIn] = useState(false);
-	return loggedIn ? <MainApp setLoggedIn={setLoggedIn} /> : <Login setLoggedIn={setLoggedIn} />;
+	const token = localStorage.getItem("token");
+	if (loggedIn === false && token !== null) {
+		player.auth(token).then(res => {
+			// To cause it to re-render
+			setLoggedIn(true);
+			setLoggedIn(res);
+			if (res === false) {
+				localStorage.removeItem("token");
+			}
+		});
+		return <div className="loader full_screen"><img alt="loader" src="./loader.svg"></img></div>;
+	} else if (loggedIn === false)
+		return <Login setLoggedIn={setLoggedIn} />;
+	else
+		return <MainApp setLoggedIn={setLoggedIn} />;
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));
