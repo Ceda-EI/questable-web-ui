@@ -6,6 +6,7 @@ dependencies:
   react: 16.8.6
   react-dom: 16.8.6
   react-scripts: 2.1.8
+  sweetalert: 2.1.2
 packages:
   /@babel/code-frame/7.0.0:
     dependencies:
@@ -4030,6 +4031,10 @@ packages:
       node: '>= 0.4'
     resolution:
       integrity: sha512-qZryBOJjV//LaxLTV6UC//WewneB3LcXOL9NP++ozKVXsIIIpm/2c13UDiD9Jp2eThsecw9m3jPqDwTyobcdbg==
+  /es6-object-assign/1.1.0:
+    dev: false
+    resolution:
+      integrity: sha1-wsNYJlYkfDnqEHyx5mUrb58kUjw=
   /escape-html/1.0.3:
     dev: false
     resolution:
@@ -8730,6 +8735,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-mEcocL8igTL8vdhoEputEsPAKeM=
+  /promise-polyfill/6.1.0:
+    dev: false
+    resolution:
+      integrity: sha1-36lpQ+qcEh/KTem1hoyznTRy4Fc=
   /promise/8.0.2:
     dependencies:
       asap: 2.0.6
@@ -10208,6 +10217,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-xBfxJxfk4UeVN8asec9jNxHiv3UAMv/ujwBWGYvQhhMb2u3YTGKkiybPcLFDLq7GLLWE9wa73e0/m8L5nTzQbw==
+  /sweetalert/2.1.2:
+    dependencies:
+      es6-object-assign: 1.1.0
+      promise-polyfill: 6.1.0
+    dev: false
+    resolution:
+      integrity: sha512-iWx7X4anRBNDa/a+AdTmvAzQtkN1+s4j/JJRWlHpYE8Qimkohs8/XnFcWeYHH2lMA8LRCa5tj2d244If3S/hzA==
   /symbol-tree/3.2.2:
     dev: false
     resolution:
@@ -11273,3 +11289,4 @@ specifiers:
   react: ^16.8.4
   react-dom: ^16.8.4
   react-scripts: 2.1.8
+  sweetalert: ^2.1.2

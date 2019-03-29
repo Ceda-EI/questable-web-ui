@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-export default (player) => {
+export default (player, swal) => {
 	function Login(props) {
 		const [input, setInput] = useState(localStorage.getItem("token") ? localStorage.getItem("token"): "" );
 		return (
@@ -13,10 +13,12 @@ export default (player) => {
 						onClick={
 							() => player.auth(input)
 								.then(x => {
-									props.setLoggedIn(x);
 									if (x === true) {
 										localStorage.setItem("token", input);
+									} else {
+										swal("Invalid Token");
 									}
+									props.setLoggedIn(x);
 								})
 						}>Submit</button>
 				</div>

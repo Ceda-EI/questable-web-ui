@@ -7,10 +7,11 @@ import axios from "axios";
 import login from "./components/login";
 import mainapp from "./components/mainapp";
 import models from "./models";
+import swal from "sweetalert";
 
 const { player } = models(config, axios);
 
-const Login = login(player);
+const Login = login(player, swal);
 const MainApp = mainapp(player);
 
 function App(){
