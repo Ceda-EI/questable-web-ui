@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./scss/index.scss";
+import "nes.css/css/nes.min.css";
 import { config } from "./config";
 import axios from "axios";
 import login from "./components/login";

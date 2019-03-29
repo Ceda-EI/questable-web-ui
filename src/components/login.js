@@ -6,18 +6,20 @@ export default (player) => {
 		const [input, setInput] = useState(localStorage.getItem("token") ? localStorage.getItem("token"): "" );
 		return (
 			<div className="login">
-				<input type="text" placeholder="Token ID" value={input}
-					onChange={evt => setInput(evt.target.value)} />
-				<button
-					onClick={
-						() => player.auth(input)
-							.then(x => {
-								props.setLoggedIn(x);
-								if (x === true) {
-									localStorage.setItem("token", input);
-								}
-							})
-					}>Submit</button>
+				<div className="wrapper">
+					<input type="text" placeholder="Token ID" value={input} className="nes-input"
+						onChange={evt => setInput(evt.target.value)} />
+					<button className="nes-btn is-primary"
+						onClick={
+							() => player.auth(input)
+								.then(x => {
+									props.setLoggedIn(x);
+									if (x === true) {
+										localStorage.setItem("token", input);
+									}
+								})
+						}>Submit</button>
+				</div>
 			</div>
 		);
 	}
