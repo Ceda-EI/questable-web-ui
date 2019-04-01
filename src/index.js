@@ -9,10 +9,10 @@ import mainapp from "./components/mainapp";
 import models from "./models";
 import swal from "sweetalert";
 
-const { player } = models(config, axios);
+const { player, quest, sideQuest } = models(config, axios);
 
 const Login = login(player, swal);
-const MainApp = mainapp(player);
+const MainApp = mainapp(player, quest, sideQuest);
 
 function App(){
 	const [loggedIn, setLoggedIn] = useState(false);

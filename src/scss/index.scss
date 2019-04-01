@@ -29,14 +29,16 @@ body {
 }
 
 .main {
+	margin: 0 5%;
 	header {
 		width: 100%;
+		margin-top: 1em;
 		padding: 1em 3em;
 		display: flex;
 		justify-content: space-between;
 	}
 	.body {
-		padding: 1em;
+		padding: 0 1em;
 		div {
 			margin: 1em 0;
 			box-sizing: border-box;
