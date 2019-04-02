@@ -33,7 +33,8 @@ export default (player, quest, sideQuest) => {
 			sideQuest.getSideQuests(token).then((res) => setSideQuests(res));
 
 		let body;
-		if (display.type === "main")
+		switch(display.type) {
+		case "main":
 			body = (<>
 				<Stats playerStats={playerStats} />
 				<div className="stats lists nes-container with-title is-dark">
@@ -58,13 +59,22 @@ export default (player, quest, sideQuest) => {
 						className="nes-btn is-primary"
 					>List Side Quests</button>
 				</div>
-			</>);
-		else if (display.type === "quests" || display.type === "sideQuests")
-			body = <Quests display={display} />;
-		else if (display.type === "quest" || display.type === "sideQuest")
-			body = <Quest display={display} />;
-		else if (display.type === "addQuest" || display.type === "addSideQuest")
-			body = <AddQuest display={display} />;
+				</>);
+			break;
+		case "quests":
+			body = <Quests display={display} quests={quests} setDisplay={setDisplay} />;
+			break;
+		case "sideQuests":
+			body = <Quests display={display} quests={sideQuests} setDisplay={setDisplay} />;
+			break;
+		case "quest":
+		case "sideQuest":
+			body = <Quest display={display} setDisplay={setDisplay} />;
+			break;
+		case "addQuest":
+		case "addSideQuest":
+			body = <AddQuest display={display} setDisplay={setDisplay} />;
+		}
 		return (
 			<div className="main">
 				<header>

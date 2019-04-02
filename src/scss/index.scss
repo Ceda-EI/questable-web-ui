@@ -48,6 +48,35 @@ body {
 				box-sizing: border-box;
 			}
 		}
+		.quests {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			.quests_head {
+				margin: 0 2.5%;
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				h2 {
+					text-align: left;
+				}
+				.back {
+					border: none;
+					color: #FFF;
+					background-color: rgba(0,0,0,0);
+					text-align: right;
+					width: 30px;
+					margin: 0;
+					padding: 0;
+				}
+			}
+			.quest_tile {
+				width: 45%;
+				text-align: center;
+				margin: 2.5%;
+			}
+		}
 	}
 }
 
@@ -76,6 +105,13 @@ body {
 				button {
 					width: 98%;
 					margin: 0.25em 1%;
+				}
+			}
+			.quests {
+				.quests_head {
+				}
+				.quest_tile {
+					width: 95%;
 				}
 			}
 		}
