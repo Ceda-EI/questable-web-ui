@@ -3,7 +3,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import Stats from "./stats";
 import Quests from "./quests";
-import Quest from "./quest";
+import QuestGen from "./quest";
 import AddQuest from "./addquest";
 
 export default (player, quest, sideQuest) => {
@@ -23,6 +23,7 @@ export default (player, quest, sideQuest) => {
 		const [ display, setDisplay ] = useState({ type: "main"});
 
 		const token = localStorage.getItem("token");
+		const Quest = QuestGen(quest, sideQuest);
 		if (playerStats === null)
 			player.player(token).then((res) => setPlayerStats(res));
 
@@ -62,18 +63,38 @@ export default (player, quest, sideQuest) => {
 				</>);
 			break;
 		case "quests":
-			body = <Quests display={display} quests={quests} setDisplay={setDisplay} />;
+			body = (
+				<Quests
+					display={display}
+					quests={quests}
+					setDisplay={setDisplay}
+				/>);
 			break;
 		case "sideQuests":
-			body = <Quests display={display} quests={sideQuests} setDisplay={setDisplay} />;
+			body = (
+				<Quests
+					display={display}
+					quests={sideQuests}
+					setDisplay={setDisplay}
+				/>);
 			break;
 		case "quest":
 		case "sideQuest":
-			body = <Quest display={display} setDisplay={setDisplay} />;
+			body = (
+				<Quest
+					display={display}
+					setDisplay={setDisplay}
+					quest={quest}
+					sideQuest={sideQuest}
+				/>);
 			break;
 		case "addQuest":
 		case "addSideQuest":
-			body = <AddQuest display={display} setDisplay={setDisplay} />;
+			body = (
+				<AddQuest
+					display={display}
+					setDisplay={setDisplay}
+				/>);
 		}
 		return (
 			<div className="main">

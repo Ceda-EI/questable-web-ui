@@ -39,7 +39,7 @@ body {
 	}
 	.body {
 		padding: 0 1em;
-		div {
+		.stats {
 			margin: 1em 0;
 			box-sizing: border-box;
 			button {
@@ -47,6 +47,29 @@ body {
 				margin: 0 1%;
 				box-sizing: border-box;
 			}
+		}
+		.quest {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			.quest_element {
+				margin: 1em 0;
+				display: flex;
+				width: 100%;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				input[type="text"] {
+					width: 80%;
+				}
+				.radios {
+					width: 80%;
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+				}
+			}
+
 		}
 		.quests {
 			width: 100%;
@@ -107,9 +130,25 @@ body {
 					margin: 0.25em 1%;
 				}
 			}
-			.quests {
-				.quests_head {
+			.quest {
+				.quest_element {
+					flex-direction: column;
+					justify-content: flex-start;
+					align-items: flex-start;
+					label {
+						text-align: left;
+					}
+					input[type="text"] {
+						width: 100%;
+					}
+					.radios {
+						width: 100%;
+						flex-direction: column;
+						justify-content: flex-start;
+					}
 				}
+			}
+			.quests {
 				.quest_tile {
 					width: 95%;
 				}

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default (player, swal) => {
 	function Login(props) {
-		const [input, setInput] = useState(localStorage.getItem("token") ? localStorage.getItem("token"): "" );
+		const [input, setInput] = useState("");
 		return (
 			<div className="login">
 				<div className="wrapper">
