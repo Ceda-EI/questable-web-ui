@@ -64,7 +64,16 @@ export default (quest, sideQuest) => {
 			);
 		}
 		else {
-			return (
+			return (<>
+				<div className="back_only">
+					<button
+						className="back"
+						onClick={() => props.setDisplay(
+							{
+								type: props.display.type + "s"
+							})
+						}>&lt;</button>
+				</div>
 				<div className="quest nes-container with-title is-dark">
 					<p className="title">{type}</p>
 					<div className="quest_element">
@@ -102,8 +111,13 @@ export default (quest, sideQuest) => {
 								/>)}
 						</div>
 					</div>
+					<div className="quest_element">
+						<button className="nes-btn is-primary">Update</button>
+						<button className="nes-btn is-success">Mark as done</button>
+						<button className="nes-btn is-error">Delete</button>
+					</div>
 				</div>
-			);
+			</>);
 		}
 	}
 

@@ -28,8 +28,24 @@ body {
 	}
 }
 
+.back_only {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	.back {
+		border: none;
+		color: #FFF;
+		background-color: rgba(0,0,0,0);
+		text-align: right;
+		width: 30px;
+		margin: 0;
+		padding: 0;
+	}
+}
+
 .main {
-	margin: 0 5%;
+	margin: 0 auto;
+	max-width: 1000px;
 	header {
 		width: 100%;
 		margin-top: 1em;
@@ -39,14 +55,14 @@ body {
 	}
 	.body {
 		padding: 0 1em;
+		button {
+			width: 48%;
+			margin: 0 1%;
+			box-sizing: border-box;
+		}
 		.stats {
 			margin: 1em 0;
 			box-sizing: border-box;
-			button {
-				width: 48%;
-				margin: 0 1%;
-				box-sizing: border-box;
-			}
 		}
 		.quest {
 			width: 100%;
@@ -67,6 +83,9 @@ body {
 					display: flex;
 					flex-direction: row;
 					justify-content: space-between;
+				}
+				button {
+					width: 30%;
 				}
 			}
 
@@ -118,7 +137,7 @@ body {
 	height: 100vh;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
 	.main {
 		header {
 			padding: 1em 1em;
@@ -145,6 +164,9 @@ body {
 						width: 100%;
 						flex-direction: column;
 						justify-content: flex-start;
+					}
+					button {
+						width: 100%;
 					}
 				}
 			}
